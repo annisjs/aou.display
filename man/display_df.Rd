@@ -4,12 +4,14 @@
 \alias{display_df}
 \title{Displays a formatted table}
 \usage{
-display_df(df, width = 100)
+display_df(df, width = 100, caption = NULL)
 }
 \arguments{
 \item{df}{a data.frame}
 
 \item{width}{the width of the columns in pixels}
+
+\item{caption}{an optional caption for the table}
 }
 \description{
 Displays a formatted table
