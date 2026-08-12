@@ -3,6 +3,9 @@
 #' @export
 display_hmisc_summary <- function(table1)
 {
+  oldopt <- options("browser")
+  options(browser = "chrome")
+  on.exit(options(oldopt))
   out <- Hmisc::html(table1, caption='',
                      exclude1=F, npct='both', digits=3,long=T,
                      prmsd=TRUE, brmsd=T, longtable=T, middle.bold=T,

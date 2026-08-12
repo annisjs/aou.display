@@ -10,6 +10,9 @@
 #' @export
 display_df <- function(df,width=100,caption=NULL)
 {
+    oldopt <- options("browser")
+    options(browser = "chrome")
+    on.exit(options(oldopt))
     width <- paste0("width: ",width,"px")
     styled_df <- htmlTable::addHtmlTableStyle(df,col.rgroup = c("#E7E7E7","#FFFFFF"))
     IRdisplay::display_html(htmlTable::htmlTable(styled_df, align = "c", caption = caption,

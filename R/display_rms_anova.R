@@ -4,6 +4,9 @@
 #' @export
 display_rms_anova <- function(aov,width=150)
 {
+  oldopt <- options("browser")
+  options(browser = "chrome")
+  on.exit(options(oldopt))
   w <- paste0("width: ",width,"px")
   a <- anova(aov)
   rn <- rownames(a)
